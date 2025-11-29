@@ -1,0 +1,13 @@
+POST request received
+POST data: Array
+(
+    [name] => ram
+    [phone] => 8296430774
+    [email] => ram@gmail.com
+    [address] => doddaballapur railway station
+    [waste_type] => E-waste
+    [pickup_datetime] => 2025-11-29T00:38
+    [notes] => fdasa
+)
+
+Insert successful. Tracking ID: WC-20251128-488676
