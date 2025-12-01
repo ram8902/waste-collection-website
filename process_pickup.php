@@ -11,12 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = trim($_POST['phone'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $address = trim($_POST['address'] ?? '');
+    $ward = $_POST['ward'] ?? '';
     $waste_type = $_POST['waste_type'] ?? '';
     $pickup_datetime = $_POST['pickup_datetime'] ?? '';
     $notes = trim($_POST['notes'] ?? '');
 
     // Validation
-    if (empty($name) || empty($phone) || empty($email) || empty($address) || empty($waste_type) || empty($pickup_datetime)) {
+    if (empty($name) || empty($phone) || empty($email) || empty($address) || empty($ward) || empty($waste_type) || empty($pickup_datetime)) {
         $_SESSION['error'] = 'Please fill in all required fields.';
         header("Location: book_pickup.php");
         exit();
@@ -51,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Insert pickup request
         try {
-            $stmt = $pdo->prepare("INSERT INTO pickup_requests (user_id, tracking_id, name, phone, email, address, waste_type, pickup_datetime, notes, image_path, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending')");
-            $stmt->execute([$user_id, $tracking_id, $name, $phone, $email, $address, $waste_type, $pickup_datetime, $notes, $image_path]);
+            $stmt = $pdo->prepare("INSERT INTO pickup_requests (user_id, tracking_id, name, phone, email, address, ward, waste_type, pickup_datetime, notes, image_path, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending')");
+            $stmt->execute([$user_id, $tracking_id, $name, $phone, $email, $address, $ward, $waste_type, $pickup_datetime, $notes, $image_path]);
             
             $_SESSION['success_message'] = "Pickup request submitted successfully! Your tracking ID is: <strong>$tracking_id</strong>";
             ob_end_clean();

@@ -137,6 +137,23 @@ if (isset($_SESSION['error'])) {
                                     </button>
                                 </div>
                                 
+
+                                <div class="form-floating-modern mt-4">
+                                    <select class="form-control-modern" id="ward" name="ward" required>
+                                        <option value="">Select Your Ward</option>
+                                        <option value="East Ward - east" <?php echo (($_POST['ward'] ?? '') === 'East Ward - east') ? 'selected' : ''; ?>>East Ward - east</option>
+                                        <option value="North Ward - north" <?php echo (($_POST['ward'] ?? '') === 'North Ward - north') ? 'selected' : ''; ?>>North Ward - north</option>
+                                        <option value="South Ward - south" <?php echo (($_POST['ward'] ?? '') === 'South Ward - south') ? 'selected' : ''; ?>>South Ward - south</option>
+                                        <option value="Ward 1 - North Zone" <?php echo (($_POST['ward'] ?? '') === 'Ward 1 - North Zone') ? 'selected' : ''; ?>>Ward 1 - North Zone</option>
+                                        <option value="Ward 2 - North Zone" <?php echo (($_POST['ward'] ?? '') === 'Ward 2 - North Zone') ? 'selected' : ''; ?>>Ward 2 - North Zone</option>
+                                        <option value="Ward 3 - South Zone" <?php echo (($_POST['ward'] ?? '') === 'Ward 3 - South Zone') ? 'selected' : ''; ?>>Ward 3 - South Zone</option>
+                                    </select>
+                                    <label for="ward">
+                                        <i class="bi bi-map"></i>
+                                        <span>Select Your Ward <span class="text-danger">*</span></span>
+                                    </label>
+                                </div>
+
                                 <div class="row g-4 mt-4">
                                     <div class="col-md-6">
                                         <div class="form-floating-modern">
