@@ -156,6 +156,9 @@ try {
                         <a href="staff.php" class="btn btn-secondary action-btn">
                             <i class="bi bi-person-badge-fill"></i> Manage Staff
                         </a>
+                        <a href="manage_wards.php" class="btn btn-success text-white action-btn">
+                            <i class="bi bi-map-fill"></i> Manage Wards
+                        </a>
                     </div>
                 </div>
             </div>
