@@ -112,11 +112,14 @@ define('DB_PASS', '');               // Your MySQL password (empty for XAMPP def
 waste-collection-app/
 │
 ├── config.php                 # Database configuration
+├── config.sample.php          # Sample configuration file
 ├── index.php                  # Homepage
 ├── register.php               # User registration
 ├── login.php                  # User login
 ├── book_pickup.php           # Book waste pickup
 ├── track.php                 # Track pickup status
+├── history.php               # User pickup history
+├── profile.php               # User profile management
 ├── logout.php                # Logout
 ├── database.sql              # Database schema
 │
@@ -125,6 +128,8 @@ waste-collection-app/
 │   ├── dashboard.php
 │   ├── pickups.php
 │   ├── edit_pickup.php
+│   ├── manage_wards.php      # Manage dynamic wards
+│   ├── monthly_report.php    # Generate reports
 │   ├── staff.php
 │   └── logout.php
 │
@@ -134,12 +139,20 @@ waste-collection-app/
 │   ├── update_status.php
 │   └── logout.php
 │
+├── includes/                 # Reusable components
+│   ├── chatbot.php           # Chatbot widget
+│   └── report_helpers.php    # Helper functions for reports
+│
+├── api/                      # API endpoints
+│   └── chat.php              # Chatbot API
+│
 └── assets/                   # Static assets
     ├── css/
     │   └── style.css         # Main stylesheet with dark mode
     ├── js/
     │   └── theme.js          # Dark mode toggle functionality
     └── images/
+        ├── chatbot_logo.png  # Chatbot branding
         └── uploads/          # Uploaded waste images
 ```
 
